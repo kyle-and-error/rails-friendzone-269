@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_07_15_132514) do
   create_table "potential_attendees", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "event_id"
-    t.string "status"
+    t.integer "status", default: 0
     t.text "initial_message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
