@@ -1,0 +1,2 @@
+class PotentialAttendee < ApplicationRecord
+end
