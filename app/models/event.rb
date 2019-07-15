@@ -3,5 +3,5 @@ class Event < ApplicationRecord
   has_many :events
 
   validates :user, :name, :photo, :people_needed, :location, presence: true
-  vaildates :people_needed, greater_than_or_equal_to: 0
+  validates_numericality_of :people_needed, greater_than: 0
 end
