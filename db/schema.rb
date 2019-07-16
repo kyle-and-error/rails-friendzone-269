@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 2019_07_15_151626) do
     t.text "description"
     t.integer "people_needed"
     t.string "photo"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "host_id"
     t.datetime "start_time", null: false
     t.datetime "end_time", null: false
-    t.index ["host_id"], name: "index_events_on_host_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "potential_attendees", force: :cascade do |t|
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_07_15_151626) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "events", "users", column: "host_id"
+  add_foreign_key "events", "users"
   add_foreign_key "potential_attendees", "events"
   add_foreign_key "potential_attendees", "users"
 end
