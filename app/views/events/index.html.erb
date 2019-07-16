@@ -41,7 +41,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/reserve/NV0eHnNkQDHA21GC3BAJ_Paris%20Louvr.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
   <div class="container">
     <h1>Lets find an Event <strong>for</strong> you</strong>!</h1>
-    <p>Experience the joy of joing others</p>
+    <p>Welcome Friendzoners</p>
     <a class="btn btn-flat" href="#">Start looking</a>
   </div>
 </div>
@@ -60,30 +60,26 @@
   </div>
 </div>
 
-<h1>Welcome Dear Friendzoners</h1>
+<% @events.each do |event| %>
 
-<h1>Events</h1>
+<div class="card-trip">
+  <img src="https://images.unsplash.com/photo-1495756111155-45cb19b8aeee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80">
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= event.name %></h2>
+      <p><%= event.host.full_name %></p>
+    </div>
+    <h2 class="People needed">people needed <%= event.people_needed %></h2>
+    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+    <%= link_to 'Show', event %>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.host.full_name %></td>
-        <td><%= link_to 'Show', event %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<% end %>
 
 <%= link_to 'New Event', new_event_path %>
+
+
+
+
+
