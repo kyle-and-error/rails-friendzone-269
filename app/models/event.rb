@@ -3,6 +3,6 @@ class Event < ApplicationRecord
   has_many :potential_attendees, dependent: :destroy
   has_many :users, through: :potential_attendees
 
-  # validates :host, :name, :photo, :people_needed, :location, :start_time, :end_time, presence: true
-  # validates_numericality_of :people_needed, greater_than: 0
+  validates :host, :name, :photo, :people_needed, :location, :start_time, :end_time, presence: true
+  validates_numericality_of :people_needed, greater_than: 0
 end
