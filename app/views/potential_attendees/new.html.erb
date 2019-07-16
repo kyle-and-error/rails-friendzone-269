@@ -1,0 +1,6 @@
+<h1>Hello from potential_attendees</h1>
+
+<%= simple_form_for([@event, @potential_attendee]) do |f| %>
+  <%= f.input  :initial_message %>
+  <%= f.button :submit %>
+<% end %>

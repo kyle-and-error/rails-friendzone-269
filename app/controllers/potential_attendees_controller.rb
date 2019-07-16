@@ -1,18 +1,33 @@
 class PotentialAttendeesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_potential_attendees, only: %i[show destroy]
+  before_action :set_event, only: %i[new create index]
 
   def index
-    @event = Event.find(params[:event_id])
-    @potential_attendees = Potential_Attendee.all.select { |event| event == @event }
-    policy_scope Potential_Attendee
+    @potential_attendees = PotentialAttendee.all.select { |event| event == @event }
+    policy_scope PotentialAttendee
   end
 
   def new
-    @potential_attendee = Potential_Attendee.new
+    @potential_attendee = PotentialAttendee.new
+    authorize @potential_attendee
   end
 
   def create
+    @potential_attendee = PotentialAttendee.new(potential_attendee_params)
+    @potential_attendee.user = current_user
+    @potential_attendee.event = @event
+
+    respond_to do |format|
+      if @potential_attendee.save
+        format.html { redirect_to @potential_attendee, notice: 'Potential Attendee was successfully created.' }
+        format.json { render :show, status: :created, location: @potential_attendee }
+      else
+        format.html { render :new }
+        format.json { render json: @potential_attendee.errors, status: :unprocessable_entity }
+      end
+    end
+    authorize @potential_attendee
   end
 
   def show
@@ -26,13 +41,17 @@ class PotentialAttendeesController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
+  def set_event
+     @event = Event.find(params[:event_id])
+  end
+
   def set_potential_attendees
-    @potential_attendee = Event.find(params[:id])
+    @potential_attendee = PotentialAttendee.find(params[:id])
     authorize @potential_attendee
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    # params.require(:event).permit(:name, :user_id)
+    params.require(:event).permit(:initial_message)
   end
 end

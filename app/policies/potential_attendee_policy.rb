@@ -9,4 +9,9 @@ class PotentialAttendeePolicy < ApplicationPolicy
     # Only host should see every request
     user == @record.host
   end
+
+  def create?
+    user
+  end
+
 end
