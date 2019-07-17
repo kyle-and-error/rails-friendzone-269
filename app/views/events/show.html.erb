@@ -1,9 +1,29 @@
 
-<div class="banner" style="background-image:, url(https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);">
+
+      <!-- Wrapper for img -->
+    <div class="img">
+      <img src=<%= @event.photo %>>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
   <div class="container">
-    <h1> Get ready to get out of the <strong>Friendzone</strong>!</h1>
-    <p>lets go.</p>
-    <a class="button" href="#">Join now</a>
+  <h1><%= @event.name %></h1><br>
+  <div class="div-container">
+
+    <div class="text">
+      <p>
+     <%= @event.description %></p>
+    </div>
+
+    <div class="time">
+        <p>Start - <%= @event.start_time %></p>
+       <p>End - <%= @event.end_time %> (approximately)</p>
+    <button >Join_Now"</button>
+    <i class="fas fa-user-friends"><%= @event.attendees.count %>/<%= @event.people_needed %></i>
+    </div>
   </div>
 </div>
-
