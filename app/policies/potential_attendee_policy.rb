@@ -7,11 +7,24 @@ class PotentialAttendeePolicy < ApplicationPolicy
 
   def index?
     # Only host should see every request
-    user == @record.host
+    user_is_host?
   end
 
   def create?
     user
   end
 
+  def show?
+    user_is_host? || user_is_guest?
+  end
+
+  private
+
+  def user_is_host?
+    @record.event.host == user
+  end
+
+  def user_is_guest?
+    user == @record.user
+  end
 end

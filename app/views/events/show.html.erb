@@ -10,20 +10,20 @@
 <br>
 <br>
 <br>
-  <div class="container">
+<div class="container">
   <h1><%= @event.name %></h1><br>
   <div class="div-container">
 
     <div class="text">
       <p>
-     <%= @event.description %></p>
+      <%= @event.description %></p>
     </div>
 
     <div class="time">
-        <p>Start - <%= @event.start_time %></p>
-       <p>End - <%= @event.end_time %> (approximately)</p>
-    <button >Join_Now"</button>
-    <i class="fas fa-user-friends"><%= @event.attendees.count %>/<%= @event.people_needed %></i>
+      <p>Start - <%= @event.start_time %></p>
+      <p>End - <%= @event.end_time %> (approximately)</p>
+      <%= link_to 'Join Now', new_event_potential_attendee_path(@event), class: "btn btn-primary" %>
+      <i class="fas fa-user-friends"><%= @event.attendees.count %>/<%= @event.people_needed %></i>
     </div>
   </div>
 </div>

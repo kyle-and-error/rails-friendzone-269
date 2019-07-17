@@ -4,7 +4,7 @@ class PotentialAttendeesController < ApplicationController
   before_action :set_event, only: %i[new create index]
 
   def index
-    @potential_attendees = PotentialAttendee.all.select { |event| event == @event }
+    @potential_attendees = PotentialAttendee.all.select { |attendee| attendee.event == @event }
     policy_scope PotentialAttendee
   end
 
@@ -20,7 +20,7 @@ class PotentialAttendeesController < ApplicationController
 
     respond_to do |format|
       if @potential_attendee.save
-        format.html { redirect_to @potential_attendee, notice: 'Potential Attendee was successfully created.' }
+        format.html { redirect_to @event, notice: 'Potential Attendee was successfully created.' }
         format.json { render :show, status: :created, location: @potential_attendee }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PotentialAttendeesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_event
-     @event = Event.find(params[:event_id])
+    @event = Event.find(params[:event_id])
   end
 
   def set_potential_attendees
@@ -51,7 +51,7 @@ class PotentialAttendeesController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def event_params
-    params.require(:event).permit(:initial_message)
+  def potential_attendee_params
+    params.require(:potential_attendee).permit(:initial_message)
   end
 end
