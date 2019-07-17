@@ -1,5 +1,6 @@
+import 'application.css';
 import "bootstrap";
-import 'application.css'
-import { initDatepickers } from '../components/datepicker'
+import { initDatepickers } from '../components/datepicker';
+
 
 initDatepickers();
