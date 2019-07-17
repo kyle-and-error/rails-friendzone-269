@@ -1,11 +1,12 @@
 import flatpickr from 'flatpickr';
 
 const initDatepickers = () => {
-  console.log("Hello");
-  const startDateinput = document.getElementById('start_date');
-  const endDateinput = document.getElementById('end_date');
+
+  const startDateinput = document.getElementById('search_start_date');
+  const endDateinput = document.getElementById('search_end_date');
 
   if (startDateinput && endDateinput) {
+    console.log("Hello");
     flatpickr(startDateinput, {
     minDate: 'today',
     dateFormat: 'd-m-Y',
