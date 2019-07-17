@@ -7,6 +7,6 @@ class Event < ApplicationRecord
   validates_numericality_of :people_needed, greater_than: 0
 
   def attendees
-    users.select { |user| user.status == "accepted" }
+    potential_attendees.select { |potential_attendee| potential_attendee.status == "accepted" }
   end
 end
