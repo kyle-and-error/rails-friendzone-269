@@ -1,3 +1,14 @@
+.main-container {
+  display: flex;
+}
+
+.event-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+
 .cards {
   margin: 60px;
   height: 150px;
@@ -6,6 +17,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  border-radius: 10px;
+  justify-content: space-around;
 }
 
 .card-category {
