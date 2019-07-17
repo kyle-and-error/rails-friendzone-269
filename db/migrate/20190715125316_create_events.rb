@@ -6,9 +6,9 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.integer :people_needed
       t.date :date
       t.string :photo
-      t.references :user, foreign_key: true
 
       t.timestamps
     end
+    add_reference :events, :host, foreign_key: { to_table: :users }
   end
 end
