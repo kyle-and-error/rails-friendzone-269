@@ -7,11 +7,15 @@ class PotentialAttendeePolicy < ApplicationPolicy
 
   def index?
     # Only host should see every request
-    user == @record.host
+    puts "Checked index"
+    @record.event.host == user
   end
 
   def create?
     user
   end
 
+  def show?
+    @record.event.host == user || user == @record.user
+  end
 end
