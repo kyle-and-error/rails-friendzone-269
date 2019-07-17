@@ -61,7 +61,7 @@
 </div>
 
 <div class="main-container">
-  <div class="event-cards">                                 
+  <div class="event-cards">
     <% @events.each do |event| %>
       <div class="card-trip">
         <img src=<%= event.photo %>>
@@ -70,10 +70,11 @@
             <h2><%= event.name %></h2>
             <p><%= event.host.full_name %></p>
           </div>
-         <h2 class="People needed">people needed <%= event.people_needed %></h2>
+         <h2 class="People needed">People Needed <%= event.people_needed %></h2>
          <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
          <%= link_to 'Show', event %>
        </div>
+     </div>
     <% end %>
   </div>
 </div>
