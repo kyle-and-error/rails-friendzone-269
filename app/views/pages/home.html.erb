@@ -31,7 +31,7 @@
   <div class="container">
     <div class="col-4">
       <div class="form">
-        <%= simple_form_for :search, url: events_path  do |f| %>
+        <%= simple_form_for :search, method: :get, url: events_path  do |f| %>
         <%= f.input :search, label:"Search:", required: false%>
         <%= f.input :date, label:"Date:", required: false %>
         <%= f.input :people, label:"People:", required: false  %>
