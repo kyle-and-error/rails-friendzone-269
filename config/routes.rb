@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :potential_attendees, only: [:index, :new, :create, :destory]
   end
   resources :potential_attendees, only: :show
+
 end
