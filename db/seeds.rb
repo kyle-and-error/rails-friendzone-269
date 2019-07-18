@@ -8,6 +8,7 @@
 puts "Cleaning up database..."
 Event.destroy_all
 User.destroy_all
+Category.destroy_all
 
 puts "Generating users..."
 markus = User.new({
@@ -159,6 +160,8 @@ Event.create([
     end_time: 2.days.from_now
   }
 ])
+
+puts "Creating categories"
 
 categories = ["sports", "tableTop", "videogames", "movies/Tv", "live performances", "outdoors", "food", "party/drinks", "networking"]
 categories.each { |name| Category.create!(category_name: name) }
