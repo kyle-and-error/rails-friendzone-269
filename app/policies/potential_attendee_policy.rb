@@ -6,8 +6,7 @@ class PotentialAttendeePolicy < ApplicationPolicy
   end
 
   def index?
-    # Only host should see every request
-    true
+    user
   end
 
   def create?
@@ -16,6 +15,10 @@ class PotentialAttendeePolicy < ApplicationPolicy
 
   def show?
     user_is_host? || user_is_guest?
+  end
+
+  def update?
+    user_is_host?
   end
 
   private
