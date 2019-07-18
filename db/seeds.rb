@@ -62,7 +62,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(3.5)
+sleep(2)
 
 Event.create({
   host: saskia,
@@ -74,7 +74,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(3.5)
+sleep(2)
 
 Event.create({
   host: bjarne,
@@ -86,7 +86,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(3.5)
+sleep(2)
 
 Event.create({
   host: markus,
@@ -99,7 +99,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(3.5)
+sleep(2)
 
 Event.create({
   host: markus,
@@ -112,7 +112,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(3.5)
+sleep(2)
 
 Event.create({
   host: markus,
@@ -125,7 +125,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(3.5)
+sleep(2)
 
 Event.create({
   host: saskia,
@@ -138,20 +138,20 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(3.5)
+sleep(2)
 
 Event.create({
   host: bjarne,
   name: 'Sculpting Class',
   people_needed: 1,
   photo: 'https://kimbernadas.com/wp-content/uploads/2015/02/Kim-Bernadas-Plastic-Surgery-Sculpture.jpg',
-  address: 'Bislett Park',
+  address: 'Pilestredet 56, 0167 Oslo',
   description: 'I have one free spot to join this cool sculpting class by this Japanese artist ',
   start_time: Time.now,
   end_time: 2.days.from_now
 })
 
-sleep(3.5)
+sleep(2)
 
 Event.create({
   host: markus,
@@ -164,7 +164,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(3.5)
+sleep(2)
 
 Event.create({
   host: bjarne,
