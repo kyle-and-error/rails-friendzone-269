@@ -1,10 +1,49 @@
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <img src="https://image.shutterstock.com/image-vector/friendzone-logo-half-heart-filled-260nw-550035856.jpg" />
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" style="color: white">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white">Messages</a>
+      </li>
+      <li class="nav-item dropdown">
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://data.whicdn.com/images/81830527/large.jpg" />
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+        </div>`
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cms.hostelworld.com/hwblog/wp-content/uploads/sites/2/2016/12/12339301_10156418876675165_6982707928657414417_o.jpg);">
+
+  <h1>Create your own experience! You'll be surprised who might join you :) </h1>
+
+
+
+
+<div class= "col-4", style="color: white">
 <%= simple_form_for @event do |f| %>
-  <%= f.input  :name %>
-  <%= f.input  :description %>
-  <%= f.input  :location %>
-  <%= f.input  :people_needed %>
-  <%= f.input  :photo %>
-  <%= f.input :start_time, as: :datetime%>
-  <%= f.input :end_time, as: :datetime %>
-  <%= f.button :submit %>
-<% end %>
+  <%= f.input  :name, label:"Name:" %>
+  <%= f.input  :description, label: "Description:" %>
+  <%= f.input  :location, label: "Location:" %>
+  <%= f.input  :people_needed, label:"People Needed:"%>
+  <%= f.input  :photo, label:"Picture:" %>
+  <%= f.input :start_time, as: :datetime, label: "Start Time:" %>
+  <%= f.input :end_time, as: :datetime, label: "End Time" %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>:
+</div>
+
