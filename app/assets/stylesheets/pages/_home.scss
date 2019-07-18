@@ -1,68 +1,68 @@
-.navbar {
-  background-color: black;
+.home-info {
+  padding: 15px;
+
+  h1 {
+    color: $white;
+    text-shadow: rgba(0, 0, 0, 0.2);
+    font-size: 3rem;
+  }
+
+  p {
+    color: $light-gray;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
 }
 
-.banner {
+.home-info-strong {
+  color: $orange;
+}
+
+.background{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('https://images.unsplash.com/photo-1486210284477-e900ad8a6820?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80');
   background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-  height: 100vh;
-}
-
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-.card-trip {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.card-trip > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-s
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  background-position: center center;
   position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  // z-index: -10;
+  width: 100%;
 }
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+.col-6{
+margin-top: 150px;
+padding: 16px;
 }
-.navbar-nav a {
-  color: white;
+
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-height: 100vh;
 }
+
+.form{
+  border: 1px  white solid;
+  padding: 16px;
+  margin-top: 140px;
+  border-radius: 15px;
+}
+
+// .background-overlay{
+//   position: absolute;
+//   background-color: rgba(0,0,0,0.5);
+//   bottom: 0;
+//   top: 0;
+//   height:100%;
+//   width: 100%;
+//   // z-index: -5;
+//   opacity: 80%;
+// }
+
+//.navbar-nav a {
+ // color: white;
+//}

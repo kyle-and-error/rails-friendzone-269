@@ -1,7 +1,7 @@
 <h1>Users that will join this event</h1>
 
 
-<%@potential_attendees.each do |attendee|%>
+<% @potential_attendees.each do |attendee|%>
   <p><%= attendee.user.full_name%></p>
   <p><%= attendee.initial_message %></p>
   <p><%= attendee.user.email %></p>
