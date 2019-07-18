@@ -32,12 +32,12 @@
     <div class="col-4">
       <div class="form">
         <%= simple_form_for :search, method: :get, url: events_path  do |f| %>
-        <%= f.input :search, label:"Key word:", required: false%>
-        <%= f.input :start_date, as: :string, label:"Start date:", required: false %>
-        <%= f.input :end_date, as: :string, label:"End date:", required: false %>
-        <%= f.input :people, label:"Group size:", required: false  %>
-        <%= f.collection_select :category, label:"Category:", required: false %>
-        <%= f.button :submit %>
+          <%= f.input :search, label:"Key word:", required: false%>
+          <%= f.input :start_date, as: :string, label:"Start date:", required: false %>
+          <%= f.input :end_date, as: :string, label:"End date:", required: false %>
+          <%= f.input :people, label:"Group size:", required: false  %>
+          <%= f.input :category, collection: Category.options_for_select %>
+          <%= f.button :submit %>
         <% end %>
       </div>
     </div>

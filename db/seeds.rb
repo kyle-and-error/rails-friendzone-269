@@ -159,4 +159,7 @@ Event.create([
     end_time: 2.days.from_now
   }
 ])
+
+categories = ["sports", "tableTop", "videogames", "movies/Tv", "live performances", "outdoors", "food", "party/drinks", "networking"]
+categories.each { |name| Category.create!(category_name: name) }
 puts "Finished!"
