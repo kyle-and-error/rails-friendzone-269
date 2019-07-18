@@ -22,7 +22,7 @@ class PotentialAttendeePolicy < ApplicationPolicy
   end
 
   def user_requests?
-    @record.event.users.include(user)
+    true
   end
 
   private

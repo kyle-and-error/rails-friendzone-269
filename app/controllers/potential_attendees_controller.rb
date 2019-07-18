@@ -8,7 +8,7 @@ class PotentialAttendeesController < ApplicationController
     policy_scope PotentialAttendee
   end
 
-  def user_request
+  def user_requests
     @potential_attendees = PotentialAttendee.all.select { |attendee| attendee.user == current_user }
     policy_scope PotentialAttendee
   end
