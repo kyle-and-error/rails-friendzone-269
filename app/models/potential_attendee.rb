@@ -5,4 +5,3 @@ class PotentialAttendee < ApplicationRecord
   validates :status, presence: true
   enum status: %i[pending accepted rejected]
 end
-
