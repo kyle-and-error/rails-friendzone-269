@@ -1,9 +1,9 @@
 
-
       <!-- Wrapper for img -->
-    <div class="img-show">
+
+  </div>
       <img src=<%= @event.photo %>>
-    </div>
+  </div>
 <br>
 <br>
 <br>
@@ -11,7 +11,7 @@
 <br>
 <br>
 <div class="container-show">
-  <h1 class="h1-show"><%= @event.name %></h1><br>
+  <h1><%= @event.name %></h1><br>
   <div class="div-container-show">
 
     <div class="text-show">
@@ -22,6 +22,7 @@
     <div class="time-show">
       <p class="p-show">Start - <%= @event.start_time %></p>
       <p class="p-show">End - <%= @event.end_time %> (approximately)</p>
+      <br>
       <%= link_to 'Join Now', new_event_potential_attendee_path(@event), class: "btn btn-primary" %>
       <i class="fas fa-user-friends"><%= @event.attendees.count %>/<%= @event.people_needed %></i>
     </div>

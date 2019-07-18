@@ -1,13 +1,14 @@
 <h1>Users that will join this event</h1>
 
 
-<%@potential_attendees.each do |attendee|%>
+<% @potential_attendees.each do |attendee|%>
   <p><%= attendee.user.full_name%></p>
   <p><%= attendee.initial_message %></p>
   <p><%= attendee.user.email %></p>
   <p><%= attendee.status %></p>
-  <button>Accept</button> <button>Reject</button>
-
+  <%= link_to 'Accept', event_accept_request_path(@event, attendee, status: 'accepted', :method => :patch) %>
+  <%= link_to 'Set back to pending', event_accept_request_path(@event, attendee, status: 'pending', :method => :patch) %>
+  <%= link_to 'Reject', event_reject_request_path(@event, attendee, status: 'rejected', :method => :patch) %>
 <% end %>
 
 
