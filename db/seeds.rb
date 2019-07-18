@@ -62,7 +62,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(5)
+sleep(3.5)
 
 Event.create({
   host: saskia,
@@ -74,7 +74,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(5)
+sleep(3.5)
 
 Event.create({
   host: bjarne,
@@ -86,7 +86,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(5)
+sleep(3.5)
 
 Event.create({
   host: markus,
@@ -99,7 +99,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(5)
+sleep(3.5)
 
 Event.create({
   host: markus,
@@ -112,7 +112,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(5)
+sleep(3.5)
 
 Event.create({
   host: markus,
@@ -125,7 +125,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(5)
+sleep(3.5)
 
 Event.create({
   host: saskia,
@@ -138,7 +138,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(5)
+sleep(3.5)
 
 Event.create({
   host: bjarne,
@@ -151,7 +151,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(5)
+sleep(3.5)
 
 Event.create({
   host: markus,
@@ -164,7 +164,7 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-sleep(5)
+sleep(3.5)
 
 Event.create({
   host: bjarne,
