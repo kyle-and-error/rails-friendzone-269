@@ -1,4 +1,3 @@
-
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <a class="navbar-brand" href="#">
     <img src="https://image.shutterstock.com/image-vector/friendzone-logo-half-heart-filled-260nw-550035856.jpg" />
@@ -27,21 +26,30 @@
   </div>
 </div>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cms.hostelworld.com/hwblog/wp-content/uploads/sites/2/2016/12/12339301_10156418876675165_6982707928657414417_o.jpg);">
-  <div class="container">
-    <div class="col-4">
-      <div class="form">
-        <%= simple_form_for :search, method: :get, url: events_path  do |f| %>
-        <%= f.input :search, label:"Key word:", required: false%>
-        <%= f.input :start_date, as: :string, label:"Start date:", required: false %>
-        <%= f.input :end_date, as: :string, label:"End date:", required: false %>
-        <%= f.input :people, label:"Group size:", required: false  %>
-        <%= f.button :submit %>
-        <% end %>
-      </div>
+ <div class="form-container background">
+   <div class="col-4">
+     <div class="form">
+       <%= simple_form_for :search, method: :get, url: events_path  do |f| %>
+         <%= f.input :search, label:"Key word:", required: false %>
+         <%= f.input :start_date, as: :string, label:"Start date:", required: false %>
+         <%= f.input :end_date, as: :string, label:"End date:", required: false %>
+         <%= f.input :people, label:"Group size:", required: false  %>
+         <%= f.input :category, collection: Category.options_for_select %>
+         <%= f.button :submit %>
+       <% end %>
+     </div>
+
+  <div class="col-6">
+    <div class="home-info">
+      <h1> Welcome to the <strong class="home-info-strong">Friendzone</strong></h1>
+      <p> Interested in trying out new things or meeting new people or simply board? <br> With friendzone you can easily join <strong>different activities</strong>. Check out all the exciting activities <strong>near you</strong></p>
     </div>
   </div>
 </div>
+
+
+
+
 
 
 

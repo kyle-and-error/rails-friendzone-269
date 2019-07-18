@@ -5,7 +5,7 @@
 .event-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 0px;
 }
 
 
@@ -21,16 +21,6 @@
   justify-content: space-around;
 }
 
-.card-category {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
 
   .img-text {
   }
