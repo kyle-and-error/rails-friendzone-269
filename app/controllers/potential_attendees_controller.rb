@@ -1,6 +1,6 @@
 class PotentialAttendeesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_potential_attendees, only: %i[show destroy]
+  before_action :set_potential_attendee, only: %i[show destroy update]
   before_action :set_event, only: %i[new create index]
 
   def index
@@ -30,12 +30,10 @@ class PotentialAttendeesController < ApplicationController
     authorize @potential_attendee
   end
 
-  def show
-    # displays status of request
-  end
+  def update
+    @potential_attendee.update(status: params[:status])
 
-  def destroy
-    # only potential_attendee can do this
+    redirect_to event_potential_attendees_path(@potential_attendee.event)
   end
 
   private
@@ -45,7 +43,7 @@ class PotentialAttendeesController < ApplicationController
     @event = Event.find(params[:event_id])
   end
 
-  def set_potential_attendees
+  def set_potential_attendee
     @potential_attendee = PotentialAttendee.find(params[:id])
     authorize @potential_attendee
   end

@@ -1,13 +1,18 @@
+<h1>Create your own experience! You'll be surprised who might join you :) </h1>
+
+
 
 <div class="main-container" >
+<div class= "col-4", style="color: white">
 <%= simple_form_for @event do |f| %>
-  <%= f.input  :name %>
-  <%= f.input  :description %>
-  <%= f.input  :location %>
-  <%= f.input  :people_needed %>
-  <%= f.input  :photo %>
-  <%= f.input :start_time, as: :datetime%>
-  <%= f.input :end_time, as: :datetime %>
-  <%= f.button :submit %>
-<% end %>
- </div>
+  <%= f.input  :name, label:"Name:" %>
+  <%= f.input  :description, label: "Description:" %>
+  <%= f.input  :location, label: "Location:" %>
+  <%= f.input  :people_needed, label:"People Needed:"%>
+  <%= f.input  :photo, label:"Picture:" %>
+  <%= f.input :start_time, as: :datetime, label: "Start Time:" %>
+  <%= f.input :end_time, as: :datetime, label: "End Time" %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>:
+</div>
+</div>
