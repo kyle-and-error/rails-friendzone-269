@@ -21,6 +21,10 @@ class PotentialAttendeePolicy < ApplicationPolicy
     user_is_host?
   end
 
+  def user_requests?
+    true
+  end
+
   private
 
   def user_is_host?

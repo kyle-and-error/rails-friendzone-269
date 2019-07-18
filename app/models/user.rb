@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :potential_attendees, dependent: :destroy
 
   def full_name
-    "#{first_name} #{last_name}" if first_name && last_name
+    if first_name && last_name
+      "#{first_name} #{last_name}"
+    else
+      email
+    end
   end
 end

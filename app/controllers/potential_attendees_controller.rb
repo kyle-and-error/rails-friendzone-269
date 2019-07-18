@@ -8,6 +8,11 @@ class PotentialAttendeesController < ApplicationController
     policy_scope PotentialAttendee
   end
 
+  def user_requests
+    @potential_attendees = PotentialAttendee.all.select { |attendee| attendee.user == current_user }
+    policy_scope PotentialAttendee
+  end
+
   def new
     @potential_attendee = PotentialAttendee.new
     authorize @potential_attendee
