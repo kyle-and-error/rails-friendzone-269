@@ -52,8 +52,13 @@ test_user = User.new({
 test_user.save
 puts 'Email: test.doe@testing.com, password: password'
 
+puts "Generateing categories"
+categories = ["sports", "tabletop", "videogames", "movies/tv", "live performances", "outdoors", "food", "party/drinks", "networking", "class session", "other"]
+categories.each { |name| Category.create!(category_name: name) }
+
 puts 'Generating events'
-Event.create({
+Event.create!({
+  category_id: 1,
   host: markus,
   name: 'Fencing Session',
   people_needed: 1,
@@ -65,7 +70,8 @@ Event.create({
 
 sleep(2)
 
-Event.create({
+Event.create!({
+  category_id: 10,
   host: saskia,
   name: 'Meditation Workshop',
   people_needed: 4,
@@ -77,7 +83,8 @@ Event.create({
 
 sleep(2)
 
-Event.create({
+Event.create!({
+  category_id: 11,
   host: bjarne,
   name: 'Afternoon Cooking Class',
   people_needed: 2,
@@ -89,7 +96,8 @@ Event.create({
 
 sleep(2)
 
-Event.create({
+Event.create!({
+  category_id: 11,
   host: markus,
   name: 'Sailing Party',
   people_needed: 2,
@@ -102,7 +110,8 @@ Event.create({
 
 sleep(2)
 
-Event.create({
+Event.create!({
+  category_id: 11,
   host: markus,
   name: 'Black Metal Concert MIDGARDSBLOT',
   people_needed: 2,
@@ -115,7 +124,8 @@ Event.create({
 
 sleep(2)
 
-Event.create({
+Event.create!({
+  category_id: 11,
   host: markus,
   name: 'Friendly Ice Hockey Game',
   people_needed: 3,
@@ -128,7 +138,8 @@ Event.create({
 
 sleep(2)
 
-Event.create({
+Event.create!({
+  category_id: 11,
   host: saskia,
   name: 'Opera Night',
   people_needed: 2,
@@ -141,7 +152,8 @@ Event.create({
 
 sleep(2)
 
-Event.create({
+Event.create!({
+  category_id: 11,
   host: bjarne,
   name: 'Sculpting Class',
   people_needed: 1,
@@ -154,7 +166,8 @@ Event.create({
 
 sleep(2)
 
-Event.create({
+Event.create!({
+  category_id: 11,
   host: markus,
   name: 'Shopping day',
   people_needed: 1,
@@ -167,7 +180,8 @@ Event.create({
 
 sleep(2)
 
-Event.create({
+Event.create!({
+  category_id: 11,
   host: bjarne,
   name: 'Sauna Sesh',
   people_needed: 1,
@@ -178,7 +192,4 @@ Event.create({
   end_time: 2.days.from_now
 })
 
-puts "Creating categories"
-categories = ["sports", "tableTop", "videogames", "movies/Tv", "live performances", "outdoors", "food", "party/drinks", "networking"]
-categories.each { |name| Category.create!(category_name: name) }
 puts "Finished!"
