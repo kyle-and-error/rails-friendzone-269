@@ -7,7 +7,7 @@ class PotentialAttendeePolicy < ApplicationPolicy
 
   def index?
     # Only host should see every request
-    user_is_host?
+    true
   end
 
   def create?
