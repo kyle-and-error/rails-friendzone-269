@@ -1,5 +1,7 @@
 class Event < ApplicationRecord
+  belongs_to :category
   belongs_to :host, class_name: "User"
+
   has_many :potential_attendees, dependent: :destroy
   has_many :users, through: :potential_attendees
 
