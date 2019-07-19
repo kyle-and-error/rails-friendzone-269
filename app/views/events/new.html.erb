@@ -7,7 +7,7 @@
 <%= simple_form_for @event do |f| %>
   <%= f.input  :name, label:"Name:" %>
   <%= f.input  :description, label: "Description:" %>
-  <%= f.input  :location, label: "Location:" %>
+  <%= f.input  :address, label: "Address:" %>
   <%= f.input  :people_needed, label:"People Needed:"%>
   <%= f.input  :photo, label:"Picture:" %>
   <%= f.input :start_time, as: :datetime, label: "Start Time:" %>
