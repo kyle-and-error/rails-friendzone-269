@@ -1,67 +1,51 @@
+.pictureev {
+  align-items: center !important;
+  width: 100%;
+  position: relative;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.back-button {
+  position: absolute;
+  bottom: 0; right: 10px;
+}
+
+.main-container {
+  display: flex;
+}
+
+.main-content {
+  flex-grow: 1;
+}
 
 .container-show{
-  display:inline;
+margin: 20px;
 }
-.div-container-show{
-  display: flex;
-  flex-flow: row nowrap;
 
+#map {
+  height: 60vh;
+  width: 40%;
 }
-.time-show{
-  width: 400px;
-  height: 350px;
-  right: 0;
-  padding: 25px 50px 75px 100px;
-  margin-left: 800px;
-  background-color: #4c4c4c;
-  bottom: 400px;
-  position: relative;
-  text-align: center;
-}
-.time-show p{
-  color: #FFFFFF;
-  text: bold;
-  text-shadow: 2px 2px #000000;
-}
-.text-show{
-  left: 0;
-  width: 600px;
-  height: 300px;
-  padding: 25px 50px 75px 100px;
-  color: black;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 10px 10px 5px #aaaaaa;
-}
+
+.time-info {
+    width: 70%;
+    color: $light-gray;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    font-size: 22px;
+    line-height: 1.6rem;
+    margin-right: 70px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    justify-content: space-around;
 p{
-  position: relative;
-  text-align: justify;
-  left: 0;
-  margin: 5px;
-  font-size: 3vmin;
-}
-.img-show{
-  overflow: hidden;
-  background-color: black;
+
+  color: $orange;
+  }
 }
 
-.img-show img{
-  width: 100%;
-  height: 500px;
-  object-fit: contain;
-}
-h1{
-  margin: 0;
-  color: black;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-}
-.btn{
-  width: 50%;
-  border-radius: 12px;
-}
-.fas{
-  height: 20%;
-  margin: 3px;
+.back-button {
+   color: $orange;
 }

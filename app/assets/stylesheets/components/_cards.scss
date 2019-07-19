@@ -41,7 +41,21 @@
   }
 }
 
+.buttons {
 
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+
+}
+
+.buttons a{
+  margin: 0 5px;
+}
+
+.card-body {
+  font-style: roboto
+}
 
 .card-product {
   overflow: hidden;
@@ -72,7 +86,10 @@
   margin-top: 8px;
 }
 
-.card-product .card-product-infos {
-  padding: 16px;
-}
 
+.card-product-infos {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px
+}

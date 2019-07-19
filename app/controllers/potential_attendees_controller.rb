@@ -4,7 +4,7 @@ class PotentialAttendeesController < ApplicationController
   before_action :set_event, only: %i[new create index]
 
   def index
-    @potential_attendees = PotentialAttendee.all.select { |attendee| attendee.event == @event }
+    @potential_attendees = PotentialAttendee.all
     policy_scope PotentialAttendee
   end
 
@@ -25,7 +25,7 @@ class PotentialAttendeesController < ApplicationController
 
     respond_to do |format|
       if @potential_attendee.save
-        format.html { redirect_to @event, notice: 'Potential Attendee was successfully created.' }
+        format.html { redirect_to event_potential_attendees_path(@event), notice: 'Potential Attendee was successfully created.' }
         format.json { render :show, status: :created, location: @potential_attendee }
       else
         format.html { render :new }
