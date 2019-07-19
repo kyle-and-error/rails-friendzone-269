@@ -3,6 +3,13 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
 
+     @markers = @events.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude
+      }
+    end
+
     policy_scope(Event)
   end
 

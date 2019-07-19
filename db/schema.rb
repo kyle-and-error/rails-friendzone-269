@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_16_114611) do
+ActiveRecord::Schema.define(version: 2019_07_18_135115) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -25,7 +31,11 @@ ActiveRecord::Schema.define(version: 2019_07_16_114611) do
     t.bigint "host_id"
     t.datetime "start_time", null: false
     t.datetime "end_time", null: false
-    t.string "location"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_events_on_category_id"
     t.index ["host_id"], name: "index_events_on_host_id"
   end
 
@@ -50,11 +60,12 @@ ActiveRecord::Schema.define(version: 2019_07_16_114611) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "avatar"
+    t.string "avatar", default: "http://petmedmd.com/images/user-profile.png"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "categories"
   add_foreign_key "events", "users", column: "host_id"
   add_foreign_key "potential_attendees", "events"
   add_foreign_key "potential_attendees", "users"
