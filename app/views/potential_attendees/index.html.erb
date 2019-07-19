@@ -1,37 +1,24 @@
-<h1>This page should show all users who would like to join this event</h1>
+<h1>The following people would like to join!</h1>
 
-<% @potential_attendees.each do |attendee|%>
-  <div class="card-product">
-    <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
-      <h2> attendee.user.full_name</h2>
+<div class= "attendees">
 
-      <p><%= attendee.initial_message %></p>
-    <p><%= attendee.user.email %></p>
-  <p><%= attendee.status %></p>
-  <%= link_to 'Accept', event_accept_request_path(@event, attendee, status: 'accepted', :method => :patch) %>
-  <%= link_to 'Set back to pending', event_accept_request_path(@event, attendee, status: 'pending', :method => :patch) %>
-  <%= link_to 'Reject', event_reject_request_path(@event, attendee, status: 'rejected', :method => :patch) %>
+  <% @potential_attendees.each do |attendee|%>
+  <div class="col-6">
+    <div class="card-product">
+      <img src=<%= attendee.user.avatar %>>
+      <div class="card-product-infos">
+        <div class="details">
+          <h2> <%= attendee.user.full_name %></h2>
+          <p><%= attendee.initial_message %></p>
+          <p><%= attendee.user.email %></p>
+          <p><%= attendee.status %></p>
+        </div>
+        <div class="buttons">
+          <%= link_to 'Accept', event_accept_request_path(@event, attendee, status: 'accepted', :method => :patch), class: "btn btn-primary" %>
+          <%= link_to 'Pending', event_accept_request_path(@event, attendee, status: 'pending', :method => :patch), class:"btn btn-warning" %>
+          <%= link_to 'Reject', event_reject_request_path(@event, attendee, status: 'rejected', :method => :patch), class: "btn btn-danger" %>
+        </div>
+      </div>
     </div>
+  </div>
   <% end %>
-
-<div class="card-product">
-  <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
-    <h2> Johannes</h2>
-
-    <p> Moin! Ich wuerde gern einen neue Rezept mit euch zusammen kochen!</p>
-  </div>
-</div>
-<div class="card-product">
-  <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
-    <h2> Der Wolf</h2>
-
-    <p> Servus ! Ich heisse Henrik Wolf und bin kurz in der stadt mir wurder sehr viel spass machen  wenn wir zuasammen  zu den Operaen gehen..</p>
-  </div>
-</div>
-<div class="card-product">
-  <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
-    <h2> Saskia</h2>
-
-    <p> WOO SAILING PARTYYY!!!</p>
-  </div>
-</div>
