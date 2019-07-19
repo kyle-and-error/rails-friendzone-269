@@ -26,8 +26,10 @@
       <p class="p-show">Start - <%= @event.start_time %></p>
       <p class="p-show">End - <%= @event.end_time %> (approximately)</p>
       <br>
-      <%= link_to 'Join Now', new_event_potential_attendee_path(@event), class: "btn btn-primary" %>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Ask to Join</button>
       <i class="fas fa-user-friends"><%= @event.attendees.count %>/<%= @event.people_needed %></i>
     </div>
   </div>
 </div>
+          <%= render "modal/newmodal" %>
+
