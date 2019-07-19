@@ -8,6 +8,7 @@
 puts "Cleaning up database..."
 Event.destroy_all
 User.destroy_all
+PotentialAttendee.destroy_all
 
 puts "Generating users..."
 markus = User.new({
@@ -87,7 +88,7 @@ Event.create([
     host: markus,
     name: "Sailing Party",
     people_needed: 2,
-    photo: "http://www.circuitodellecaveiblee.it/wp-content/uploads/2016/12/rId12.png.jpeg",
+    photo: "http://www.sydneybysail.com/images/home/private-charter-low.jpg",
     location: "Aker Brygge",
     description: "*Girls only* I need 2 girls to go with me to a Sailing boat trip /party. Please only girls with good vibes ",
     start_time: Time.now,
@@ -159,4 +160,8 @@ Event.create([
     end_time: 2.days.from_now
   }
 ])
+
+
+puts "Generating potential_attendees..."
+
 puts "Finished!"
