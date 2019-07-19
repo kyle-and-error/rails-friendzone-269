@@ -18,7 +18,10 @@
       <p class="p-show">
       <%= @event.description %></p>
     </div>
+    <!-- button that goes back-->
+    <button class="back-button" ><%= link_to 'Back', :back %></button>
 
+    <!--the time and join button-->
     <div class="time-show">
       <p class="p-show">Start - <%= @event.start_time %></p>
       <p class="p-show">End - <%= @event.end_time %> (approximately)</p>
