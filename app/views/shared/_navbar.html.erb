@@ -19,6 +19,9 @@
         </li>
       <% else %>
         <li class="nav-item">
+          <%= link_to "Events", events_path
+        </li>
+        <li class="nav-item">
           <%= link_to "My Requests", user_requests_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">

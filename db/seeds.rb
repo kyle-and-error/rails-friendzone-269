@@ -64,8 +64,8 @@ Event.create!({
   people_needed: 1,
   photo: 'https://i.ytimg.com/vi/ezoZfZK75zA/maxresdefault.jpg',
   address: 'Bikuben, 1086 Oslo' ,
-  start_time: Time.now,
-  end_time: 2.days.from_now
+  start_time: 1.days.from_now,
+  end_time: 3.days.from_now
 })
 
 sleep(2)
@@ -77,8 +77,8 @@ Event.create!({
   people_needed: 4,
   photo: 'http://www.nedharmacelebration.org/wp-content/uploads/2012/08/VGKG-finger-300x199.jpg',
   address: 'Majorstuveien 26, 0367 Oslo',
-  start_time: Time.now,
-  end_time: 2.days.from_now
+  start_time: 1.days.from_now,
+  end_time: 3.days.from_now
 })
 
 sleep(2)
@@ -90,8 +90,8 @@ Event.create!({
   people_needed: 2,
   photo: 'http://www.circuitodellecaveiblee.it/wp-content/uploads/2016/12/rId12.png.jpeg',
   address: 'Vulkan 5, 0178 Oslo',
-  start_time: Time.now,
-  end_time: 2.days.from_now
+  start_time: 1.days.from_now,
+  end_time: 3.days.from_now
 })
 
 sleep(2)
@@ -104,8 +104,8 @@ Event.create!({
   photo: 'http://www.circuitodellecaveiblee.it/wp-content/uploads/2016/12/rId12.png.jpeg',
   address: 'Bryggegata 9, 0250 Oslo',
   description: '*Girls only* I need 2 girls to go with me to a Sailing boat trip /party. Please only girls with good vibes ',
-  start_time: Time.now,
-  end_time: 2.days.from_now
+  start_time: 1.days.from_now,
+  end_time: 3.days.from_now
 })
 
 sleep(2)
@@ -118,8 +118,8 @@ Event.create!({
   photo: 'https://i.pinimg.com/originals/2a/6b/02/2a6b02a4c6e50c591e469c294b89fedc.jpg',
   address: 'Rådhusplassen 1, 0037 Oslo',
   description: '*Need at least 1 person to go with me to this amazing concert. My friends are out of town. ',
-  start_time: Time.now,
-  end_time: 2.days.from_now
+  start_time: 1.days.from_now,
+  end_time: 3.days.from_now
 })
 
 sleep(2)
@@ -132,8 +132,8 @@ Event.create!({
   photo: 'https://www.worldatlas.com/upload/7b/8c/df/shutterstock-429393673.jpg',
   address: 'Jordalgata 12, 0657 Oslo',
   description: 'We just going to play for fun, but we missing 3 people in our team. ',
-  start_time: Time.now,
-  end_time: 2.days.from_now
+  start_time: 1.days.from_now,
+  end_time: 3.days.from_now
 })
 
 sleep(2)
@@ -146,8 +146,8 @@ Event.create!({
   photo: 'https://www.worldatlas.com/upload/7b/8c/df/shutterstock-429393673.jpg',
   address: 'Kirsten Flagstads Plass 1, 0150 Oslo',
   description: 'Looking for 2 people to go with to the Opera next Saturday.',
-  start_time: Time.now,
-  end_time: 2.days.from_now
+  start_time: 1.days.from_now,
+  end_time: 3.days.from_now
 })
 
 sleep(2)
@@ -160,8 +160,8 @@ Event.create!({
   photo: 'https://kimbernadas.com/wp-content/uploads/2015/02/Kim-Bernadas-Plastic-Surgery-Sculpture.jpg',
   address: 'Pilestredet 56, 0167 Oslo',
   description: 'I have one free spot to join this cool sculpting class by this Japanese artist ',
-  start_time: Time.now,
-  end_time: 2.days.from_now
+  start_time: 1.days.from_now,
+  end_time: 3.days.from_now
 })
 
 sleep(2)
@@ -174,8 +174,8 @@ Event.create!({
   photo: 'https://photos.lasvegassun.com/media/img/photos/2017/11/17/grand_bazaar_shops-42_t653.jpg?214bc4f9d9bd7c08c7d0f6599bb3328710e01e7b',
   description: 'Looking for a girl to enjoy shopping together. Next Saturday afternoon ',
   address: 'Tøyengata 2, 0190 Oslo',
-  start_time: Time.now,
-  end_time: 2.days.from_now
+  start_time: 1.days.from_now,
+  end_time: 3.days.from_now
 })
 
 sleep(2)
@@ -188,8 +188,8 @@ Event.create!({
   photo: 'https://www.adamelloresort.it/images/content/1257754_71193_3_C_1400_620_0_424141772/sauna.jpg',
   description: 'Looking for someone to go with me to the Sauna',
   address: 'Langkaia 1, 0150 Oslo',
-  start_time: Time.now,
-  end_time: 2.days.from_now
+  start_time: 1.days.from_now,
+  end_time: 3.days.from_now
 })
 
 puts "Finished!"

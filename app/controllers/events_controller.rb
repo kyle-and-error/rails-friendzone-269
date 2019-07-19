@@ -1,9 +1,21 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   def index
-    @events = Event.all
+    search = params[:search]
+    query = search[:query]
+    if query.present?
+      @events = Event.find_by_name_and_description(query)
+    else
+      @events = Event.all
+    end
 
-     @markers = @events.map do |event|
+    search_start = search[:start_date]
+    search_end = search[:end_date]
+    if search_start.present? && search_end.present?
+      @events = Event.find_events_in_range(@events, search_start, search_end)
+    end
+
+    @markers = @events.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude

@@ -2,11 +2,11 @@
   <div class="col-4">
     <div class="form">
       <%= simple_form_for :search, method: :get, url: events_path  do |f| %>
-        <%= f.input :search, label:"Key word:", required: false %>
+        <%= f.input :query, label:"Key word:", required: false %>
         <%= f.input :start_date, as: :string, label:"Start date:", required: false %>
         <%= f.input :end_date, as: :string, label:"End date:", required: false %>
         <%= f.input :people, label:"Group size:", required: false  %>
-        <%= f.input :category, collection: Category.options_for_select %>
+        <%= f.input :category, collection: Category.options_for_select,required: false %>
         <%= f.button :submit, "Search", class: "btn btn-warning" %>
       <% end %>
     </div>
