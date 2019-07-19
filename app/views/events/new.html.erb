@@ -3,7 +3,7 @@
 
 
 <div class="main-container" >
-<div class= "col-4", style="color: white">
+<div class= "col-4", style="color: black">
 <%= simple_form_for @event do |f| %>
   <%= f.input  :name, label:"Name:" %>
   <%= f.input  :description, label: "Description:" %>
@@ -13,6 +13,6 @@
   <%= f.input :start_time, as: :datetime, label: "Start Time:" %>
   <%= f.input :end_time, as: :datetime, label: "End Time" %>
   <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>:
+<% end %>
 </div>
 </div>
