@@ -18,9 +18,9 @@ class EventsController < ApplicationController
         @events = Event.find_events_in_range(@events, search_start, search_end)
       end
 
-      @events = Event.find_by_group_size(search_group) if search_group.present?
+      @events = Event.find_by_group_size(@events, search_group) if search_group.present?
 
-      @events = Event.find_by_category(search_category) if search_category.present?
+      @events = Event.find_by_category(@events, search_category) if search_category.present?
     else
       @events = Event.all
     end
