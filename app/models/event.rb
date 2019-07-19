@@ -13,4 +13,22 @@ class Event < ApplicationRecord
   def attendees
     potential_attendees.select { |potential_attendee| potential_attendee.status == "accepted" }
   end
+
+  def self.find_by_name_and_description(query)
+    sql_query = "name ILIKE :query OR description ILIKE :query"
+    where(sql_query, query: "%#{query}%")
+  end
+
+  def self.find_events_in_range(events, search_start, search_end)
+    range = search_start..search_end
+    events.select { |event| range.cover?(event.start_time) }
+  end
+
+  def self.find_by_group_size(events, group_size)
+    events.select { |event| event.group_size >= group_size}
+  end
+
+  def self.find_by_category(events, category)
+    events.select { |event| event.category == category}
+  end
 end
