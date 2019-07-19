@@ -127,7 +127,7 @@ Event.create!({
 sleep(2)
 
 Event.create!({
-  category_id: 11,
+  category_id: 1,
   host: markus,
   name: 'Friendly Ice Hockey Game',
   people_needed: 3,
@@ -194,4 +194,24 @@ Event.create!({
   end_time: 3.days.from_now
 })
 
+puts 'Creating PotentialAttendees'
+PotentialAttendee.create!({
+  user_id: 1,
+  event_id: 6,
+  status: 'accepted',
+  initial_message: "Used to be a semi-pro! Lets play!",
+})
+
+PotentialAttendee.create!({
+  user_id: 2,
+  event_id: 6,
+  status: 'rejected',
+  initial_message: "Used to be a semi-pro! Lets play!",
+})
+PotentialAttendee.create!({
+  user_id: 3,
+  event_id: 6,
+  status: 'pending',
+  initial_message: "Used to be a semi-pro! Lets play!",
+})
 puts "Finished!"
