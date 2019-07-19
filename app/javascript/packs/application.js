@@ -4,6 +4,8 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { initDatepickers } from '../components/datepicker';
 import { initMapbox } from '../plugins/init_mapbox';
+import '../plugins/modal';
 
 initMapbox();
 initDatepickers();
+

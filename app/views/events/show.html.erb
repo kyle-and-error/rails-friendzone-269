@@ -7,6 +7,28 @@
     </button>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container-show">
+  <h1><%= @event.name %></h1><br>
+  <div class="div-container-show">
+
+    <div class="text-show">
+      <p class="p-show">
+      <%= @event.description %></p>
+    </div>
+    <!-- button that goes back-->
+   
+
+    <!--the time and join button-->
+    <div class="time-show">
+      <p class="p-show">Start - <%= @event.start_time %></p>
+      <p class="p-show">End - <%= @event.end_time %> (approximately)</p>
+      <br>
 <div class="main-container">
   <div class="main-content">
     <div class="container-show">
@@ -17,12 +39,11 @@
           <p class="p-show">
           <%= @event.description %></p>
         </div>
-
       <div class="time-info">
           <p class="p-show">Start - <%= @event.start_time %></p>
           <p class="p-show">End - <%= @event.end_time %> (approximately)</p>
           <br>
-          <%= link_to 'Join Now', new_event_potential_attendee_path(@event), class: "btn btn-primary" %>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Ask to Join</button>
           <i class="fas fa-user-friends"><%= @event.attendees.count %>/<%= @event.people_needed %></i>
         </div>
       </div>
@@ -32,10 +53,4 @@
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
-
-
-
-
-
-
-
+<%= render "modal/newmodal" %>
