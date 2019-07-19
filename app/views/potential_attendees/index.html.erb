@@ -3,95 +3,24 @@
 <div class= "attendees">
 
   <% @potential_attendees.each do |attendee|%>
-  <div class="card-product">
-    <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
-    <div class="card-product-infos">
-    <h2> <%= attendee.user.full_name %></h2>
+  <div class="col-6">
+    <div class="card-product">
+      <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
+      <div class="card-product-infos">
+        <div class="details">
+          <h2> <%= attendee.user.full_name %></h2>
 
-    <p><%= attendee.initial_message %></p>
-    <p><%= attendee.user.email %></p>
-    <p><%= attendee.status %></p>
-    <%= link_to 'Accept', event_accept_request_path(@event, attendee, status: 'accepted', :method => :patch) %>
-    <%= link_to 'Set back to pending', event_accept_request_path(@event, attendee, status: 'pending', :method => :patch) %>
-    <%= link_to 'Reject', event_reject_request_path(@event, attendee, status: 'rejected', :method => :patch) %>
-  </div>
+          <p><%= attendee.initial_message %></p>
+          <p><%= attendee.user.email %></p>
+          <p><%= attendee.status %></p>
+        </div>
+        <div class="buttons">
+          <%= link_to 'Accept', event_accept_request_path(@event, attendee, status: 'accepted', :method => :patch), class: "btn btn-primary" %>
+          <%= link_to 'Pending', event_accept_request_path(@event, attendee, status: 'pending', :method => :patch), class:"btn btn-warning" %>
+          <%= link_to 'Reject', event_reject_request_path(@event, attendee, status: 'rejected', :method => :patch), class: "btn btn-danger" %>
+        </div>
+      </div>
+    </div>
   </div>
   <% end %>
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655" alt="Card image cap">
-    <div class="card-body">
-      <h1 class="card-title">Christian</h1>
-      <p class="card-text">Jeg vil gjerne gå til Black Metal konserten. Hvilken tid vil du møte?.</p>
-      <div class="buttons">
-        <a href="#" class="btn btn-primary">Accept</a>
-
-        <a href="#" class="btn btn-primary">Decline</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://www.lindbergmanagement.com/wp-content/uploads/2017/09/Pa%CC%8AlSverreHagen-portrait-photo-Hermann-Sabado-small-e1512480225235.jpg">
-      <div class="card-body">
-        <h1 class="card-title">Johannes</h1>
-        <p class="card-text">Moin! Ich wuerde gern einen neue Rezept mit euch zusammen kochen!</p>
-        <div class="buttons">
-          <a href="#" class="btn btn-primary">Accept</a>
-
-          <a href="#" class="btn btn-primary">Decline</a>
-        </div>
-      </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src=https://queerintheworld.com/wp-content/uploads/2018/04/Gay-Man-in-Helsinki-Finland.jpg">
-    <div class="card-body">
-      <h1 class="card-title"> Stephan Wolfram </h1>
-      <p class="card-text"> Servus ! Ich heisse Henrik Wolf und bin kurz in der stadt mir wurder sehr viel spass machen  wenn wir zuasammen  zu den Operaen gehen.</p>
-      <div class="buttons">
-        <a href="#" class="btn btn-primary">Accept</a>
-
-        <a href="#" class="btn btn-primary">Decline</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="https://gfx.nrk.no/np8Y7e105LOgYDEALT5yrwNyhdqIIm9IykrdYpRyaABQ" alt="Card image cap">
-    <div class="card-body">
-      <h1 class="card-title">Astrid</h1>
-      <p class="card-text"> I wanna go Sailing! Woooo</p>
-      <div class="buttons">
-        <a href="#" class="btn btn-primary">Accept</a>
-
-        <a href="#" class="btn btn-primary">Decline</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card-product">
-  <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
-  <div class="card-product-infos">
-    <h2> Johannes</h2>
-
-    <p> Moin! Ich wuerde gern einen neue Rezept mit euch zusammen kochen!</p>
-    </div>
-  </div>
-<div class="card-product">
-  <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
-  <div class="card-product-infos">
-    <h2> Der Wolf</h2>
-
-    <p> Servus ! Ich heisse Henrik Wolf und bin kurz in der stadt mir wurder sehr viel spass machen  wenn wir zuasammen  zu den Operaen gehen..</p>
-  </div>
-  </div>
-<div class="card-product">
-  <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
-  <div class="card-product-infos">
-    <h2> Saskia</h2>
-
-    <p> WOO SAILING PARTYYY!!!</p>
-  </div>
-</div>
