@@ -8,9 +8,8 @@ const initDatepickers = () => {
   if (startDateinput && endDateinput) {
     console.log("Hello");
     flatpickr(startDateinput, {
-    enableTime: true,
     minDate: 'today',
-    dateFormat: 'd-m-YTh:m',
+    dateFormat: 'd-m-Y',
     onChange: function(_, selectedDate) {
       if (selectedDate === '') {
         return endDateinput.disabled = true;
@@ -21,8 +20,7 @@ const initDatepickers = () => {
   });
     const endDateCalendar =
       flatpickr(endDateinput, {
-        enableTime: true,
-        dateFormat: 'd-m-YTh:m',
+        dateFormat: 'd-m-Y',
       });
   }
 }
