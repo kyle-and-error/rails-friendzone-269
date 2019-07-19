@@ -1,6 +1,23 @@
 <h1>The following people would like to join!</h1>
 
 <div class= "attendees">
+
+  <% @potential_attendees.each do |attendee|%>
+  <div class="card-product">
+    <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
+    <div class="card-product-infos">
+    <h2> <%= attendee.user.full_name %></h2>
+
+    <p><%= attendee.initial_message %></p>
+    <p><%= attendee.user.email %></p>
+    <p><%= attendee.status %></p>
+    <%= link_to 'Accept', event_accept_request_path(@event, attendee, status: 'accepted', :method => :patch) %>
+    <%= link_to 'Set back to pending', event_accept_request_path(@event, attendee, status: 'pending', :method => :patch) %>
+    <%= link_to 'Reject', event_reject_request_path(@event, attendee, status: 'rejected', :method => :patch) %>
+  </div>
+  </div>
+  <% end %>
+
   <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655" alt="Card image cap">
     <div class="card-body">
@@ -54,4 +71,27 @@
   </div>
 </div>
 
+<div class="card-product">
+  <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
+  <div class="card-product-infos">
+    <h2> Johannes</h2>
 
+    <p> Moin! Ich wuerde gern einen neue Rezept mit euch zusammen kochen!</p>
+    </div>
+  </div>
+<div class="card-product">
+  <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
+  <div class="card-product-infos">
+    <h2> Der Wolf</h2>
+
+    <p> Servus ! Ich heisse Henrik Wolf und bin kurz in der stadt mir wurder sehr viel spass machen  wenn wir zuasammen  zu den Operaen gehen..</p>
+  </div>
+  </div>
+<div class="card-product">
+  <img src=https://smp.vgc.no/v2/images/a6f2d2a4-156c-41b4-be4c-1229e7ae8ae8?fit=crop&h=1242&w=1657&s=5a4a86aab8fb8d396167f48c5b70be35138ac655>
+  <div class="card-product-infos">
+    <h2> Saskia</h2>
+
+    <p> WOO SAILING PARTYYY!!!</p>
+  </div>
+</div>
