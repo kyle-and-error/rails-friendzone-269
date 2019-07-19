@@ -20,6 +20,10 @@
   flex-grow: 1;
 }
 
+.container-show{
+margin: 20px;
+}
+
 #map {
   height: 60vh;
   width: 40%;
@@ -35,6 +39,7 @@
     line-height: 1.6rem;
     margin-right: 70px;
 p{
+
   color: $orange;
   }
 }
