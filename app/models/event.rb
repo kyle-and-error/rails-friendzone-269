@@ -19,16 +19,19 @@ class Event < ApplicationRecord
     where(sql_query, query: "%#{query}%")
   end
 
-  def self.find_events_in_range(events, search_start, search_end)
-    range = search_start..search_end
-    events.select { |event| range.cover?(event.start_time) }
+  def self.find_events_in_range(search_start = Time.zone.now, search_end = 1.month.from_now)
+    # range = search_start..search_end
+    # events.select { |event| range.cover?(event.start_time) }
+    where("start_time >= ? AND start_time <= ?", search_start, search_end)
   end
 
-  def self.find_by_group_size(events, group_size)
-    events.select { |event| event.group_size >= group_size}
+  def self.find_by_group_size(group_size)
+    where("people_needed >= ?", group_size)
+    # events.select { |event| event.group_size >= group_size }
   end
 
-  def self.find_by_category(events, category)
-    events.select { |event| event.category == category}
+  def self.find_by_category(category_id)
+    # events.select { |event| event.category.id == category }
+    where(category_id: category_id)
   end
 end

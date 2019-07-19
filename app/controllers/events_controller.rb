@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   def index
     search = params[:search]
     if search.present?
+      # byebug
       query = search[:query]
       if query.present?
         @events = Event.find_by_name_and_description(query)
@@ -10,17 +11,17 @@ class EventsController < ApplicationController
         @events = Event.all
       end
 
-      search_start = search[:start_date]
-      search_end = search[:end_date]
-      search_group = search[:group_size]
+      search_start = DateTime.parse(search[:start_date]) if search[:start_date].present?
+      search_end = DateTime.parse(search[:end_date]) if search[:end_date].present?
+      search_group = search[:people]
       search_category = search[:category]
+
       if search_start.present? && search_end.present?
-        @events = Event.find_events_in_range(@events, search_start, search_end)
+        @events = Event.find_events_in_range(search_start, search_end)
       end
+      @events = Event.find_by_group_size(search_group) if search_group.present?
 
-      @events = Event.find_by_group_size(@events, search_group) if search_group.present?
-
-      @events = Event.find_by_category(@events, search_category) if search_category.present?
+      @events = Event.find_by_category(search_category) if search_category.present?
     else
       @events = Event.all
     end
