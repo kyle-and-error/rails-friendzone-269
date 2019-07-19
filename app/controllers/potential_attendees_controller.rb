@@ -4,7 +4,7 @@ class PotentialAttendeesController < ApplicationController
   before_action :set_event, only: %i[new create index]
 
   def index
-    @potential_attendees = PotentialAttendee.all
+    @potential_attendees = PotentialAttendee.all.select { |attendee| attendee.event == @event}
     policy_scope PotentialAttendee
   end
 
